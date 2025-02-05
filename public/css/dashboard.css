@@ -1,0 +1,209 @@
+body {
+    font-size: 0.875rem;
+}
+
+.feather {
+    width: 16px;
+    height: 16px;
+}
+
+/*
+ * Sidebar
+ */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    /* rtl:raw:
+  right: 0;
+  */
+    bottom: 0;
+    /* rtl:remove */
+    left: 0;
+    z-index: 100; /* Behind the navbar */
+    padding: 48px 0 0; /* Height of navbar */
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 767.98px) {
+    .sidebar {
+        top: 5rem;
+    }
+}
+
+.sidebar-sticky {
+    height: calc(100vh - 48px);
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+.sidebar .nav-link {
+    font-weight: 500;
+    color: #333;
+}
+
+.sidebar .nav-link .feather {
+    margin-right: 4px;
+    color: #727272;
+}
+
+.sidebar .nav-link.active {
+    color: #2470dc;
+}
+
+.sidebar .nav-link:hover .feather,
+.sidebar .nav-link.active .feather {
+    color: inherit;
+}
+
+.sidebar-heading {
+    font-size: 0.75rem;
+}
+
+.user-data {
+    position: absolute;
+    bottom: 0;
+}
+
+/*
+ * Navbar
+ */
+
+.navbar-brand {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    background-color: rgba(0, 0, 0, 0.25);
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.25);
+}
+
+/* .navbar .navbar-toggler {
+  top: .25rem;
+  right: 1rem;
+} */
+
+.navbar .form-control {
+    padding: 0.75rem 1rem;
+}
+
+.form-control-dark {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.form-control-dark:focus {
+    border-color: transparent;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+}
+
+.font-black {
+    color: #000;
+    font-size: 16px;
+}
+
+.search-bar {
+    width: 75%;
+    margin: 10px 0px 10px 0px;
+    padding: 5px 5px 5px 5px !important;
+}
+
+.search-bar:hover {
+    border-color: #727272;
+}
+
+.btn-logout {
+    background-color: #212529;
+    margin: 0px 5px 0px 0px;
+}
+
+.btn-logout:hover {
+    background-color: #727272;
+    border: none;
+}
+
+.navbar .navbar-toggler:hover {
+    background-color: #727272;
+}
+
+/* offcanvas */
+
+.offcanvas-body {
+    font-weight: 500;
+}
+
+.offcanvas-body .nav-link {
+    color: #000;
+}
+
+.offcanvas-body .nav-link.active {
+    color: #0d6efd;
+}
+
+/* responsive design */
+
+@media (min-width: 300px) {
+    .logo {
+        display: none;
+    }
+
+    .search-bar {
+        margin-left: 20%;
+        width: 50%;
+    }
+
+    .navbar .navbar-toggler {
+        left: 0;
+    }
+
+    .offcanvas-start {
+        width: 70%;
+    }
+}
+
+@media (min-width: 576px) {
+    .logo {
+        display: none;
+    }
+
+    .search-bar {
+        margin-left: 20%;
+        width: 50%;
+    }
+
+    .navbar .navbar-toggler {
+        left: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .logo {
+        display: block;
+    }
+
+    .search-bar {
+        margin-left: 0;
+    }
+
+    .navbar .navbar-toggler {
+        left: 0;
+        width: 100%;
+    }
+}
+
+@media (min-width: 992px) {
+    /* .search-bar {
+   
+  } */
+}
+
+@media (min-width: 1200px) {
+    /* .search-bar {
+   
+  } */
+}
+
+@media (min-width: 1400px) {
+    /* .search-bar {
+    
+  } */
+}

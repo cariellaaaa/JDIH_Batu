@@ -1,0 +1,42 @@
+.button-lihat{
+    width: 100%;
+    background-color: #488b8f !important ;
+    text-decoration: none;
+    border-radius: 8px; 
+    text-align: center;
+    color: white;
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.button-lihat:hover{
+    background-color: #488b8f;
+    color: white ;
+    text-decoration: none;
+}
+
+.button-trayek{
+    width: 100%;
+    background-color: #488b8f !important ;
+    text-decoration: none;
+    border-radius: 8px; 
+    text-align: center;
+    color: white;
+    border: none;
+    margin-bottom: 5px;
+}
+
+.button-edit{
+    width: 100%;
+    background-color: #488b8f !important ;
+    text-decoration: none;
+    border-radius: 8px; 
+    text-align: center;
+    color: white;
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}

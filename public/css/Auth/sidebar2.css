@@ -1,0 +1,13 @@
+.nav-link.active {
+    font-weight: bold;
+    color: #488b8f !important;
+}
+
+h1.h2 {
+    color: #488b8f;
+}
+
+.btn.btn-primary {
+    background-color: #488b8f;
+    border-color: #488b8f;
+}

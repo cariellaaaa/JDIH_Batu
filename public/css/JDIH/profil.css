@@ -1,0 +1,63 @@
+.img-law{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.img-law img{
+    width: 60%;
+    height:50%;
+    justify-content: center;
+    align-self: center;
+    align-content: center;
+    margin-bottom: 24px;
+}
+
+.img-struktur{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-content: center;
+}
+
+.img-struktur img{
+    width: 60%;
+    height:50%;
+    justify-content: center;
+    align-self: center;
+    align-content: center;
+    margin-bottom: 24px;
+}
+
+.img-pengelola{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-content: center;
+}
+
+.img-pengelola img{
+    width: 60%;
+    height:50%;
+    justify-content: center;
+    align-self: center;
+    align-content: center;
+    margin-bottom: 24px;
+}
+
+h2{
+    margin-left: 15%;
+    margin-bottom: 2%;
+}
+
+.container{
+    margin: 60px;
+    width: max-content;
+}
+
+.text{
+    text-decoration: none;
+    color: black;
+    font-size: 18px auto;
+    margin-left: 15%;
+}

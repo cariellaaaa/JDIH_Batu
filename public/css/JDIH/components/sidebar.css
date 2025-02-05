@@ -1,0 +1,197 @@
+.main {
+    width: 100%;
+}
+
+.sidebar {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-left: 50px;
+}
+
+/* img {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+} */
+
+.search-form {
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ccc;
+    margin-top: 10%;
+}
+
+.search-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.search-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.main {
+    width: 100%;
+}
+
+.sidebar {
+    width: 90%;
+}
+
+.document {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.document h2 {
+    margin-top: 0;
+}
+
+.document .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.document .info span {
+    font-weight: bold;
+}
+
+.document .description {
+    margin-bottom: 10px;
+}
+
+.document .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.document .buttons button {
+    padding: 8px 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.document .buttons button:hover {
+    background-color: #45a049;
+}
+
+.sidebar h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+}
+
+.sidebar h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    color: black;
+    font-size: 36px;
+}
+
+label {
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.sidebar .search-form {
+    margin-bottom: 20px;
+    background-color: #488b8f;
+    padding: 40px;
+}
+
+.sidebar .search-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.sidebar .search-form button {
+    padding: 10px 20px;
+    background-color: #fa4659;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.card-content {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    padding-bottom: 10px;
+}
+
+.card-content img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.card-content h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.side-portal {
+    margin-top: 50px;
+    gap: 10px;
+}
+
+.link-portal {
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.link-portal:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.link-portal a {
+    text-decoration: none;
+    color: inherit;
+}

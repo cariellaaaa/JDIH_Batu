@@ -1,0 +1,38 @@
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-left: 80px;
+    padding-top: 40px;
+    padding-right: 80px;
+    padding-bottom: 40px;
+}
+
+.h2 {
+    padding-bottom: 40px;
+}
+
+.map-container {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    max-width: 100%;
+}
+
+.br {
+    padding-left: 20px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 20px;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+.contact-info span {
+    font-weight: bold;
+}

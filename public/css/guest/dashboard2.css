@@ -1,0 +1,138 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Outer Container */
+.outer-container {
+    min-height: 100vh;
+    padding: 15px;
+    background-image: url("/img/bg/bg_login.png");
+    background-size: cover;
+    backdrop-filter: blur(10px);
+    position: relative;
+}
+
+/* Inner Container */
+.inner-container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Header */
+.table-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.table-header img.logo-table {
+    width: 30%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.table-header h3 {
+    font-size: 1rem;
+    color: #343a40;
+    text-align: center;
+}
+
+/* Table Styles */
+#tableKasubagDokumentasi {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#tableKasubagDokumentasi th,
+#tableKasubagDokumentasi td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#tableKasubagDokumentasi thead {
+    background-color: #f2f2f2;
+}
+
+#tableKasubagDokumentasi th {
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+#tableKasubagDokumentasi tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#tableKasubagDokumentasi tr:hover {
+    background-color: #f5f5f5;
+}
+
+.badge {
+    padding: 5px 10px;
+    border-radius: 3px;
+    text-decoration: none;
+    color: white;
+    background-color: #488b8f;
+}
+
+.badge:hover {
+    background-color: #488b8f;
+    color: white;
+    text-decoration: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .inner-container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .table-header img.logo-table {
+        max-width: 100px;
+    }
+
+    .table-header h3 {
+        font-size: 0.9rem;
+    }
+
+    #tableKasubagDokumentasi {
+        font-size: 0.9rem;
+    }
+
+    #tableKasubagDokumentasi th,
+    #tableKasubagDokumentasi td {
+        padding: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .table-header h3 {
+        font-size: 0.8rem;
+    }
+
+    #tableKasubagDokumentasi {
+        font-size: 0.8rem;
+    }
+}
+
+.table-responsive {
+    margin-top: 10px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 10px;
+}

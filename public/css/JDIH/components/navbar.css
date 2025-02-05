@@ -1,0 +1,203 @@
+/* Top Navigation/Details */
+.container-navbar {
+    display: flex;
+    align-items: center;
+    padding: 2px 30px;
+    background-color: #488b8f;
+    overflow-x: hidden;
+}
+
+.navbar-kesatu {
+    display: flex;
+    align-items: center;
+    padding: 8px 30px;
+    background-color: #488b8f;
+    width: 100%;
+    color: white;
+}
+
+.logo-batu {
+    width: 30px;
+    margin-right: 70px;
+}
+
+.ikon-topnav {
+    width: 16px;
+    height: 16px;
+    margin-right: 12px;
+}
+
+.navbar-kesatu p {
+    color: white;
+    margin: 0;
+    margin-right: 26px;
+    font-weight: lighter;
+    font-size: 12px;
+}
+
+@media (max-width: 768px) {
+    .section-to-hide {
+        display: none;
+    }
+}
+
+/* Logo & Title */
+.web-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Tambahkan ini untuk memastikan elemen berada di tengah */
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.container.logo-title {
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 1200px; /* Sesuaikan lebar maksimum sesuai keinginan Anda */
+    margin: 0 auto;
+}
+
+.logo {
+    padding: 1.5rem;
+    gap: 1.5rem;
+    display: flex; /* Tambahkan ini untuk mengatur flexbox */
+    justify-content: center; /* Tambahkan ini untuk memastikan elemen logo berada di tengah */
+}
+
+.logo-container-dua {
+    width: 10vh;
+    height: 12vh;
+}
+
+.title {
+    padding: 0;
+    width: 100%;
+    text-align: center; /* Tambahkan ini untuk memastikan teks berada di tengah */
+}
+
+.title h1 {
+    margin: 0;
+    font-size: x-large;
+    display: inline-block; /* Tambahkan ini untuk menempatkan h1 bersebelahan */
+}
+
+.header-container {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.red-header {
+    color: red;
+}
+
+.title h2 {
+    font-size: large;
+    font-weight: lighter;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 1rem;
+}
+@media (max-width: 768px) {
+    .title h2 {
+        font-size: small;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* Navbar */
+.navbar {
+    border-top: 2px solid #488b8f;
+    border-bottom: 2px solid #488b8f;
+}
+.nav-item.dropdown.dropdown-navbar-kedua {
+    position: relative;
+}
+
+.nav-link,
+.nav-link.dropdown-toggle {
+    color: #488b8f;
+}
+
+.nav-link.dropdown-bs-toggle:hover {
+    color: #ffffff;
+    background-color: #488b8f;
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    min-width: 10rem; /* Adjust the minimum width as needed */
+    padding: 0;
+    background-color: #ffffff;
+}
+
+.dropdown-item.item-navbar-kedua {
+    padding: 10px 20px;
+    color: #488b8f;
+    word-wrap: break-word;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-item.item-navbar-kedua:hover {
+    background-color: #488b8f;
+    color: #ffffff;
+}
+
+/* Custom styles for navbar */
+.navbar-kedua {
+    border-top: 2px solid #488b8f;
+    border-bottom: 2px solid #488b8f;
+    border-radius: 0;
+}
+
+.navbar-kedua .nav-link:hover {
+    color: #ffffff;
+    background-color: #488b8f;
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.nav-item {
+    transition: background-color 0.3s ease;
+    margin: 0 10px;
+    border-radius: 6px;
+}
+
+.nav-item:hover {
+    background-color: #488b8f;
+}
+
+.nav-item:hover .nav-link {
+    color: #ffffff;
+}
+
+.nav-link.active {
+    font-weight: bold;
+    color: #488b8f;
+}
+
+.nav-link.active:hover {
+    color: #ffffff;
+}
+
+.dropdown-item.active {
+    color: #488b8f;
+    background-color: #ffffff;
+}
+
+.dropdown-item.active:hover {
+    background-color: #488b8f;
+    color: #ffffff;
+}

@@ -1,0 +1,291 @@
+body {
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.main-section h2 {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+/* LEFT PART */
+.left-part {
+    width: 65%;
+    margin: 20px;
+}
+
+.left-part a {
+    text-decoration: none;
+}
+
+/* Gaya untuk kartu khusus */
+.custom-card {
+    width: 90%;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.custom-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Gaya untuk konten kartu */
+.card-content {
+    width: 100%;
+}
+
+/* Gaya untuk judul */
+.card-content h3 {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #333;
+    text-align: start;
+    margin-bottom: 15px;
+}
+
+/* Gaya untuk detail peraturan */
+.rule-details {
+    width: 100% auto;
+    margin-bottom: 10px;
+}
+
+/* Gaya untuk komponen detail peraturan */
+.rule-details-component {
+    width: 100% auto;
+    gap: 2px;
+}
+
+/* Gaya untuk paragraf di dalam komponen detail peraturan */
+.rule-details-component p {
+    margin: 5px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.rule-details-component i {
+    margin-right: 6px;
+}
+
+/* Gaya untuk deskripsi */
+.card-content h5 {
+    margin: 0;
+    font-size: 1rem;
+    color: #555;
+    text-align: start;
+    line-height: 1.4;
+}
+
+/* RIGHT PART */
+.right-part {
+    width: 35%;
+}
+/* Gaya untuk kontainer utama pencarian */
+.search-box {
+    width: 78%;
+    padding: 20px;
+    background-color: #488b8f;
+    color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Gaya untuk setiap grup form */
+.form-group {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* Gaya untuk label */
+.form-group label {
+    width: 100%;
+    font-size: 1rem;
+}
+
+/* Gaya untuk input teks */
+.form-group input[type="text"] {
+    width: 100% auto;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.custom-btn {
+    background-color: white;
+    color: #888;
+    padding: 10px;
+    border: 0.5px solid;
+    border-radius: 6px;
+    border-color: #ccc;
+    width: 100%;
+    min-width: 200px;
+    height: 3rem;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    display: inline-block; /* Pastikan inline-block untuk menjaga lebar tetap */
+}
+
+.custom-btn::after {
+    content: "\25BC";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.dropdown {
+    margin-bottom: 10px;
+}
+
+.dropdown-menu {
+    min-width: 100%;
+}
+
+.dropdown-item {
+    white-space: nowrap;
+}
+
+.dropdown-item.item-tipe-dokumen:hover,
+.dropdown-item.item-jenis-dokumen:hover,
+.dropdown-item.item-status:hover {
+    background-color: #488b8f;
+    color: #ffffff;
+}
+
+.custom-btn:hover {
+    background: #dcdcdc;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+.btn-cari button[type="submit"] {
+    background: #f85f68;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    width: auto; /* Adjust this value as needed */
+    display: block;
+    margin: 0 auto; /* Center the button */
+    font-size: large;
+    font-weight: bold;
+}
+
+.btn-cari button[type="submit"]:hover {
+    background: #e04b53;
+}
+
+.right-part-link-portal {
+    width: 70%;
+    padding: 20px;
+    margin-bottom: 1rem;
+}
+
+.custom-card-link-portal {
+    width: 60%;
+    padding: 8px;
+    background-color: #ffffff;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+    color: inherit;
+}
+
+.custom-card-link-portal:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.custom-card-link-portal .card-content img {
+    width: 80%;
+    display: block;
+    margin: 0 auto 1rem;
+}
+
+.custom-card-link-portal h3 {
+    font-size: 1.25rem;
+    margin-bottom: 6px;
+    color: #333;
+    text-align: center;
+}
+
+.details-container {
+    width: 100%;
+    padding: 6px;
+}
+
+.details-status dl {
+    width: 100%;
+}
+
+.details-status dl .d-flex {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.details-status dt,
+.details-status dd {
+    margin: 0;
+    padding: 5px;
+}
+
+.details-status dd::before {
+    content: ":";
+    margin-right: 1rem; /* Adjust the space between : and dd content */
+}
+
+.details-status dt {
+    align-items: start;
+    width: 100%;
+    font-weight: bold;
+    flex: 2;
+    display: flex;
+    justify-content: start;
+}
+
+.details-status dd {
+    flex: 4;
+    padding-left: 5px; /* Adjust the space between : and dd */
+}

@@ -1,0 +1,131 @@
+.outer-container {
+    height: 100%;
+    margin: 0;
+}
+
+.status-container {
+    max-width: 800px;
+    padding: 20px;
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+.status-inner {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.314);
+}
+
+.status-title {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form-input {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+}
+
+.input {
+    width: 100%;
+    padding: 10px 10px 10px 35px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+.btn-search {
+    background-color: #17a2b8;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-search:hover {
+    background-color: #138496;
+}
+
+.btn-trayek {
+    background-color: #ffc107;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-trayek:hover {
+    background-color: #e0a800;
+}
+
+.modal-content {
+    border-radius: 8px;
+}
+
+.modal-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.modal-title {
+    font-weight: bold;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.trayek-item {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.trayek-status {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.trayek-details {
+    font-size: 0.85rem;
+}
+
+.background {
+    background-image: url('/img/bg/bg_login.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.btn-submit {
+    background-color: #488b8f;
+    border: 1px solid #488b8f;
+    border-radius: 8px;
+    padding: 8px;
+    color: white;
+    width: 50%;
+}
+
+.btn-trayek {
+    background-color: #488b8f;
+    border: 1px solid #488b8f;
+    border-radius: 8px;
+    padding: 8px;
+    color: white;
+    width: 50%;
+}

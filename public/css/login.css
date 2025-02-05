@@ -1,0 +1,85 @@
+body {
+    font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+}
+
+.background {
+    background-image: url('/img/bg/Pemkot_Batu_Edit.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px;
+}
+
+.box-login {
+    max-width: 800px;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 120px;
+    margin-top: 120px;
+    background-color: #ffffff;
+    padding: 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.314);
+}
+
+.p text-center {
+    font-size: 20px;
+}
+
+.rounded input select {
+    border-radius: 10px !important;
+}
+
+.form-input {
+    display: flex;
+    position: relative;
+}
+
+.icon {
+    position: absolute;
+    padding: 10px;
+    color: #757b85;
+}
+
+.input {
+    padding-left: 35px;
+}
+
+.form-control:focus {
+    border-color: #000000;
+    box-shadow: none;
+}
+
+.form-select:focus {
+    border-color: #000000;
+    box-shadow: none;
+}
+
+.list-nav {
+    list-style-type: none;
+    float: left;
+}
+
+.nav-link {
+    color: #000;
+}
+
+.login-page {
+    margin-top: 10%;
+}
+
+.register-page {
+    margin-top: 10%;
+}
+
+.btn-submit {
+    background-color: #488b8f;
+    border: 1px solid #488b8f;
+    border-radius: 8px;
+    padding: 8px;
+    color: white;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+}
