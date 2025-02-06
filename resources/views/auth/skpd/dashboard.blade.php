@@ -142,19 +142,20 @@
                                                                     </div>
                                                                     <div class="col ps-0">
                                                                         <p class="mb-1" style="text-align: justify;">
-                                                                            {{$draft->status}} oleh
-                                                                            {{$draft->draft_admins->validated}}</p>
+                                                                            <!-- menambah optional() -->
+                                                                            {{$draft->status}} oleh {{ optional($draft->draft_admins)->validated }}
+                                                                        </p>
                                                                     </div>
                                                                 </div>
-                                                                @if($draft->draft_admins->draft->keterangan_penolakan !=
-                                                                NULL)
+                                                                <!-- nambah optional() -->
+                                                                @if (optional(optional($draft->draft_admins)->draft)->keterangan_penolakan)
                                                                 <div class="row">
                                                                     <div class="col-1 pe-0">
                                                                         <i class="fa-solid fa-angle-right"></i>
                                                                     </div>
                                                                     <div class="col ps-0">
                                                                         <p class="mb-1" style="text-align: justify;">
-                                                                            {{$draft->draft_admins->draft->keterangan_penolakan}}
+                                                                            {{ optional(optional($draft->draft_admins)->draft)->keterangan_penolakan}}
                                                                         </p>
                                                                     </div>
                                                                 </div>
@@ -215,8 +216,9 @@
                                                                         <i class="fa-solid fa-angle-right"></i>
                                                                     </div>
                                                                     <div class="col ps-0 mb-1">
-                                                                        {{$draft->draft_admins->status}} oleh
-                                                                        {{$draft->draft_admins->validated}}
+                                                                        <!-- {{$draft->draft_admins->status}} oleh
+                                                                        {{$draft->draft_admins->validated}} -->
+                                                                        {{$draft->status}} oleh {{ optional($draft->draft_admins)->validated }}
                                                                     </div>
                                                                 </div>
                                                                 @if($draft->draft_admins->keterangan != NULL)
@@ -238,8 +240,9 @@
                                                                         <i class="fa-solid fa-angle-right"></i>
                                                                     </div>
                                                                     <div class="col ps-0 mb-1">
-                                                                        {{$draft->draft_admins->status}} oleh
-                                                                        {{$draft->draft_admins->validated}}
+                                                                        <!-- {{$draft->draft_admins->status}} oleh
+                                                                        {{$draft->draft_admins->validated}} -->
+                                                                        {{$draft->status}} oleh {{ optional($draft->draft_admins)->validated }}
                                                                     </div>
                                                                 </div>
                                                                 @if($draft->draft_admins->draft->keterangan_penolakan !=
