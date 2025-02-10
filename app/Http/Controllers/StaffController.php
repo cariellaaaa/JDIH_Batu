@@ -642,4 +642,180 @@ class StaffController extends Controller
 
         return redirect('/dashboard/katalogprodukhukum');
     }
+
+    public function storemonografihukum(Request $request)
+    {
+        // Validasi input dari request
+        $request->validate([
+            'nomor' => 'required',
+            'tahun' => 'required',
+            'judul' => 'required',
+            'penerbit' => 'required',
+            'edisi' => 'required',
+            'abstrak' => 'required',
+            'pemrakarsa' => 'required',
+            'status_dokumen' => 'required',
+            'subjek' => 'required',
+            'isbn_issn' => 'required',
+            'bahasa' => 'required',
+            'lokasi' => 'required',
+            'deskripsi_fisik' => 'required',
+            'nomor_panggil' => 'required',
+            'nomor_induk' => 'required',
+            'bidang_hukum' => 'required',
+            'tempat_penetapan' => 'required',
+            'tanggal_pengundangan' => 'required',
+        ], [
+            'nomor.required' => 'Nomor tidak boleh kosong',
+            'tahun.required' => 'Tahun tidak boleh kosong',
+            'judul.required' => 'Judul tidak boleh kosong',
+            'pemrakarsa.required' => 'SKPD Pemrakarsa tidak boleh kosong',
+            'no_regristrasi.required' => 'No Register tidak boleh kosong',
+            'no_regristrasi.unique' => 'No Registrasi sudah terdaftar',
+            'tanggal_pengundangan.required' => 'Tanggal Pengundangan tidak boleh kosong',
+            'persetujuan.mimes' => 'Persetujuan Sekda harus berformat PDF atau Word',
+            'ttd_walikota.mimes' => 'TTD Walikota harus berformat PDF atau Word',
+            'ttd_walikota_salinan.required' => 'TTD Walikota Salinan tidak boleh kosong',
+            'ttd_walikota_salinan.mimes' => 'TTD Walikota Salinan harus berformat PDF atau Word',
+        ]);
+        // Simpan file
+        $ttdWalikotaSalinan = $request->file('ttd_walikota_salinan')->store('file-ttdWalikotaSalinan');
+
+        if (isset($request->persetujuan) || isset($request->ttd_walikota)) {
+            if (isset($request->persetujuan)) {
+                $persetujuan = $request->file('persetujuan')->store('file-persetujuan');
+
+                DB::table('sekdas')->insert([
+                    'status' => 'diterima',
+                    'persetujuan' => $persetujuan,
+                ]);
+
+                DB::table('walikotas')->insert([
+                    'status' => 'diterima',
+                    'alur' => 1,
+                    'sekda_id' => DB::getPdo()->lastInsertId(),
+                ]);
+
+                DB::table('staff_dokumentasis')->insert([
+                    'status' => 'diterima',
+                    'keterangan' => $request->keterangan,
+                    'validated' => Auth::user()->name,
+                    'walikota_id' => DB::getPdo()->lastInsertId(),
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ]);
+            }
+
+            if (isset($request->ttd_walikota)) {
+                $ttdWalikota = $request->file('ttd_walikota')->store('file-ttdWalikota');
+
+                DB::table('sekdas')->insert([
+                    'status' => 'diterima',
+                ]);
+
+                DB::table('walikotas')->insert([
+                    'status' => 'diterima',
+                    'ttd_walikota' => $ttdWalikota,
+                    'alur' => 1,
+                    'sekda_id' => DB::getPdo()->lastInsertId(),
+                ]);
+
+                DB::table('staff_dokumentasis')->insert([
+                    'status' => 'diterima',
+                    'keterangan' => $request->keterangan,
+                    'validated' => Auth::user()->name,
+                    'walikota_id' => DB::getPdo()->lastInsertId(),
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ]);
+            }
+
+            if (isset($request->persetujuan) && isset($request->ttd_walikota)) {
+                $persetujuan = $request->file('persetujuan')->store('file-persetujuan');
+                $ttdWalikota = $request->file('ttd_walikota')->store('file-ttdWalikota');
+
+                DB::table('sekdas')->insert([
+                    'status' => 'diterima',
+                    'persetujuan' => $persetujuan,
+                ]);
+
+                DB::table('walikotas')->insert([
+                    'status' => 'diterima',
+                    'ttd_walikota' => $ttdWalikota,
+                    'alur' => 1,
+                    'sekda_id' => DB::getPdo()->lastInsertId(),
+                ]);
+
+                DB::table('staff_dokumentasis')->insert([
+                    'status' => 'diterima',
+                    'keterangan' => $request->keterangan,
+                    'validated' => Auth::user()->name,
+                    'walikota_id' => DB::getPdo()->lastInsertId(),
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ]);
+            }
+        }
+
+        if (!isset($request->persetujuan) && !isset($request->ttd_walikota)) {
+            DB::table('staff_dokumentasis')->insert([
+                'status' => 'diterima',
+                'keterangan' => $request->keterangan,
+                'validated' => Auth::user()->name,
+                'created_at' => now(),
+                'updated_at' => now()
+            ]);
+        }
+
+        // Menentukan status dokumen
+        $statusDokumen = '';
+        $mengganti = null;
+
+        if ($request->status_dokumen == 'berlaku') {
+            $statusDokumen = $request->status_dokumen;
+        }
+
+        if ($request->status_dokumen == 'mengganti') {
+            $statusDokumen = $request->status_dokumen;
+            $mengganti = $request->mengganti;
+        }
+
+        // Simpan data ke tabel monografi hukums
+        DB::table('monografi_hukums')->insert([
+            'nomor' => $request->nomor,
+            'tahun' => $request->tahun,
+            'judul' => $request->judul,
+            'penerbit' => $request->penerbit,
+            'edisi' => $request->edisi,
+            'abstrak' => $request->abstrak,
+            'pemrakarsa' => $request->pemrakarsa,
+            'status_dokumen' => $statusDokumen,
+            'mengganti' => $mengganti,
+            'status' => 'menunggu',
+            'subjek' => $request->subjek,
+            'isbn_issn' => $request->isbn_issn,
+            'bahasa' => $request->bahasa,
+            'lokasi' => $request->lokasi,
+            'deskripsi_fisik' => $request->deskripsi_fisik,
+            'nomor_panggil' => $request->nomor_panggil,
+            'nomor_induk' => $request->nomor_induk,
+            'bidang_hukum' => $request->bidang_hukum,
+            'tempat_penetapan' => $request->tempat_penetapan,
+            'tanggal_pengundangan' => $request->tanggal_pengundangan,
+            'ttd_walikota_salinan' => $ttdWalikotaSalinan,
+            'staff_dokumentasi_id' => DB::getPdo()->lastInsertId(),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('monografi_hukums')->where('judul', $mengganti)->update([
+            'status_dokumen' => 'dicabut',
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        $request->session()->flash('success', 'Data berhasil ditambahkan');
+
+        return redirect('/dashboard/katalogmonografihukum');
+    }
 }

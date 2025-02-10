@@ -37,32 +37,32 @@ class DashboardController extends Controller
                 'draft' => Draft::all(),
                 'jenis' => Jenis::all(),
             ]);
-            
+
         } else if (Auth::user()->role->role == 'skpd') {
             $drafts = Draft::with('dinas', 'jenis') // Mengambil relasi dinas dan jenis
-                   ->where('dinas_id', Auth::user()->dinas_id) // Filter berdasarkan dinas_id
-                   ->orderBy('tanggal_pengajuan', 'desc') // Urutkan berdasarkan tanggal pengajuan
-                   ->get();
-                   return view('auth.skpd.dashboard', [
+                ->where('dinas_id', Auth::user()->dinas_id) // Filter berdasarkan dinas_id
+                ->orderBy('tanggal_pengajuan', 'desc') // Urutkan berdasarkan tanggal pengajuan
+                ->get();
+            return view('auth.skpd.dashboard', [
                 'drafts' => $drafts,
             ]);
-            
+
         } else if (Auth::user()->role->role == 'admin_fo') {
             return view('auth.admin_fo.dashboard', [
                 'admins' => Admin::all(),
-                
+
             ]);
-        // } else if (Auth::user()->role->role == 'staff_perundang_undangan') {
-        //     return view('auth.staff_perundang_undangan.dashboard', [
-        //         'staff_undangs' => StaffUndang::all(),
-        //     ]);
+            // } else if (Auth::user()->role->role == 'staff_perundang_undangan') {
+            //     return view('auth.staff_perundang_undangan.dashboard', [
+            //         'staff_undangs' => StaffUndang::all(),
+            //     ]);
 
         } else if (Auth::user()->role->role == 'staff_perundang_undangan') {
             $staffUndangs = StaffUndang::where('user_id', Auth::id())
                 ->with(['admin.draft.jenis', 'admin.draft.dinas'])
                 ->orderBy('created_at', 'desc')
                 ->get();
-        
+
             return view('auth.staff_perundang_undangan.dashboard', [
                 'staff_undangs' => $staffUndangs,
             ]);
@@ -77,23 +77,23 @@ class DashboardController extends Controller
                 'kabag' => Kabag::all(),
             ]);
 
-    } else if (Auth::user()->role->role == 'kepala_dinas') {
-        // Ambil dinas_id dari user yang sedang login
-        $dinasId = Auth::user()->dinas_id;
-    
-        // Ambil data draft yang terkait dengan dinas_id yang sesuai dan sudah melewati kabag
-        $drafts = Draft::where('dinas_id', $dinasId)
-                       ->whereHas('kabag', function($query) {
-                           $query->whereNotNull('validated'); // Pastikan kabag sudah mengirim data
-                       })
-                       ->with(['admin', 'staffUndang', 'kasubagUndang', 'kabag', 'kepalaDinas'])
-                       ->get();
-    
-        // Kirim data ke view dengan relasi yang diperlukan
-        return view('auth.kepala_dinas.dashboard', [
-            'kepala_dinas' => KepalaDinas::all(),
-            
-        ]);
+        } else if (Auth::user()->role->role == 'kepala_dinas') {
+            // Ambil dinas_id dari user yang sedang login
+            $dinasId = Auth::user()->dinas_id;
+
+            // Ambil data draft yang terkait dengan dinas_id yang sesuai dan sudah melewati kabag
+            $drafts = Draft::where('dinas_id', $dinasId)
+                ->whereHas('kabag', function ($query) {
+                    $query->whereNotNull('validated'); // Pastikan kabag sudah mengirim data
+                })
+                ->with(['admin', 'staffUndang', 'kasubagUndang', 'kabag', 'kepalaDinas'])
+                ->get();
+
+            // Kirim data ke view dengan relasi yang diperlukan
+            return view('auth.kepala_dinas.dashboard', [
+                'kepala_dinas' => KepalaDinas::all(),
+
+            ]);
 
 
 
@@ -133,35 +133,44 @@ class DashboardController extends Controller
 
     public function editProfile(Request $request, User $user)
     {
-        $validate = [[
-            'name' => 'required',
-            'password' => 'required|min:6',
-            'confirmPassword' => 'required|same:password',
-        ], [
-            'name.required' => 'Username tidak boleh kosong',
-            'password.required' => 'Password tidak boleh kosong',
-            'password.min' => 'Password minimal 6 karakter',
-            'confirmPassword.required' => 'Konfirmasi password tidak boleh kosong',
-            'confirmPassword.same' => 'Konfirmasi password tidak sama',
-        ]];
+        $validate = [
+            [
+                'name' => 'required',
+                'password' => 'required|min:6',
+                'confirmPassword' => 'required|same:password',
+            ],
+            [
+                'name.required' => 'Username tidak boleh kosong',
+                'password.required' => 'Password tidak boleh kosong',
+                'password.min' => 'Password minimal 6 karakter',
+                'confirmPassword.required' => 'Konfirmasi password tidak boleh kosong',
+                'confirmPassword.same' => 'Konfirmasi password tidak sama',
+            ]
+        ];
 
         if ($request->email == $user->email) {
-            $validate = [[
-                'email' => 'required|email:dns|unique:users,email'
-            ], [
-                'email.required' => 'Email tidak boleh kosong',
-                'email.email' => 'Email tidak valid',
-                'email.unique' => 'Email sudah terdaftar'
-            ]];
+            $validate = [
+                [
+                    'email' => 'required|email:dns|unique:users,email'
+                ],
+                [
+                    'email.required' => 'Email tidak boleh kosong',
+                    'email.email' => 'Email tidak valid',
+                    'email.unique' => 'Email sudah terdaftar'
+                ]
+            ];
         }
 
         if ($request->nip == $user->nip) {
-            $validate = [[
-                'nip' => 'required|unique:users,nip'
-            ], [
-                'nip.required' => 'NIP tidak boleh kosong',
-                'nip.unique' => 'NIP sudah terdaftar'
-            ]];
+            $validate = [
+                [
+                    'nip' => 'required|unique:users,nip'
+                ],
+                [
+                    'nip.required' => 'NIP tidak boleh kosong',
+                    'nip.unique' => 'NIP sudah terdaftar'
+                ]
+            ];
         }
 
         $validateData = $request->validate($validate[0], $validate[1]);

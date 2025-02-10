@@ -235,10 +235,10 @@ Route::middleware(['auth', 'role:staff_dokumentasi'])->group(function () {
     Route::post('/dashboard/staffd/editmetadata/{id}', [StaffController::class, 'editmetadata']);
     Route::get('/dashboard/staffd/addprodukhukum', [StaffController::class, 'addprodukhukum']);
     Route::post('/dashboard/staffd/addprodukhukum', [StaffController::class, 'storeprodukhukum']);
-    Route::post('/store', [StaffController::class, 'storeprodukhukum'])->name('nambah');
+    // Route::post('/store', [StaffController::class, 'storeprodukhukum'])->name('nambah');
     Route::get('/dashboard/staffd/addmonografihukum', [StaffController::class, 'addmonografihukum']);
     Route::delete('/dashboard/staffd/deleteprodukhukum/{id}', [StaffController::class, 'deleteprodukhukum']);
-    // Route::get('/dashboard/staffd/addmonografihukum', [StaffController::class, 'storemonografihukum']);
+    Route::get('/dashboard/staffd/addmonografihukum', [StaffController::class, 'storemonografihukum']);
 });
 
 // Kasubag Dokumentasi

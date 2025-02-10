@@ -297,22 +297,22 @@
 @endsection
 
 @if($errors -> has('email') || $errors -> has('password') ||
-$errors -> has('confirmPassword') || $errors -> has('name') ||
-$errors -> has('nip') || $errors -> has('role_id') || $errors -> has('dinas_id'))
-@section('js')
-<script>
-const modal = new bootstrap.Modal('#tambahUser', {
-    keyboard: false
-});
-modal.show();
-</script>
-@endsection
+    $errors -> has('confirmPassword') || $errors -> has('name') ||
+    $errors -> has('nip') || $errors -> has('role_id') || $errors -> has('dinas_id'))
+    @section('js')
+        <script>
+            const modal = new bootstrap.Modal('#tambahUser', {
+                keyboard: false
+            });
+            modal.show();
+        </script>
+    @endsection
 @endif
 
 @section('js')
-<script type="text/javascript">
-$(document).ready(function() {
-    $('#tableUser').DataTable();
-});
-</script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#tableUser').DataTable();
+        });
+    </script>
 @endsection

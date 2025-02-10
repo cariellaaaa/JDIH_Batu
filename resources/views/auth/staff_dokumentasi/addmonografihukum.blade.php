@@ -6,8 +6,7 @@
 </div>
 <div class="row">
     <div class="col">
-        <!-- <form action="/dashboard/staffd/addmonografihukum" method="post" enctype="multipart/form-data"> -->
-        <form action="{{route('nambah')}}" method="post" enctype="multipart/form-data">
+        <form action="/dashboard/staffd/addmonografihukum" method="post" enctype="multipart/form-data">
             @csrf
             <div class="fs-6">
                 Nomor
